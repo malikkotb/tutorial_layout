@@ -9,15 +9,17 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} mx-auto px-5 w-full max-w-[1200px]`}>
+      <body className={`${inter.className}`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <NavBar />
-          <main>{children}</main>
+          <main className=" mx-auto px-5 w-full max-w-[1200px]">
+            <NavBar />
+            <div>{children}</div>
+          </main>
         </ThemeProvider>
       </body>
     </html>
